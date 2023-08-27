@@ -18,11 +18,11 @@
 	"env": {
         "API_HASH": {
             "description": "Get this value from my.telegram.org",
-            "value": ""
+            "value": "7ee63d86699dc72badf31242c10ac754"
         },
 		"API_ID": {
 			"description": "Get this value from my.telegram.org",
-			"value": ""
+			"value": "25339391"
 		},
 		"BOT_NAME": {
 			"description": "Name of bot to display on Thumbnail. Don't use fancy texts. Use plain text only.",
@@ -34,15 +34,15 @@
 		},
         "DATABASE_URL": {
             "description": "Paste the mongodb url.",
-            "value": ""
+            "value": "mongodb+srv://HEROKU:HEROKU@cluster0.cjcl8a8.mongodb.net/?retryWrites=true&w=majority"
         },
 		"LOGGER_ID": {
 			"description": "Channel/group id to log error/info messages.",
-			"value": ""
+			"value": "-1001954363095"
 		},
         "OWNER_ID": {
             "description": "Your telegram user id.",
-            "value": ""
+            "value": "6074152428"
         },
         "HELLBOT_SESSION": {
             "description": "Paste pyrogram session string.",
