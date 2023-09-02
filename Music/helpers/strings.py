@@ -62,11 +62,11 @@ class TEXTS:
     )
     SOURCE = (
         "**Source 📦:**\n\n"
-        "**Note:** \n__» The source code is available on GitHub. You can find the link below.__\n"
-        "__» Every project available under The-HellBot are open-source and free to use and modify to your needs.__\n"
+        "**Thanks for using HarshuBots:** \n__» The source code is available on GitHub. You can find the link below.__\n"
+        "__» Every project available under HarshuXD are open-source and free to use and modify to your needs.__\n"
         "__» Anyone pretending to be the developer of this bot and selling the code, is a scammer.__\n\n"
         "__» Please consider giving a star to the repository if you liked the project.__\n"
-        "__» Feel free to contact us if you need any help regarding the source code.__\n\n"
+        "__» Feel free to contact @Harshu_XD1 if you need any help regarding the source code.__\n\n"
         "❤️🎶 {0}"
     )
     STATS = (
