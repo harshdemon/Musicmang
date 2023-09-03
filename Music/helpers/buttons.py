@@ -208,7 +208,7 @@ class MakeButtons:
                 self.ikb(text="Repo 📦", url="https://github.com/harshdemon/XDMUSIC"),
             ],
             [
-                self.ikb(text="Network { ❤️ }", url="https://https://t.me/HarshuXDBots"),
+                self.ikb(text="OWNER { ❤️ }", url="https://t.me/Harshu_XD1"),
             ],
             [
                 self.ikb(text="Support 🎙️", url="https://t.me/Wrostdemon"),
