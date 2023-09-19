@@ -52,7 +52,7 @@ async def play_music(_, message: Message, context: dict):
             return await hell.edit(
                 f"Audio duration limit of {Config.PLAY_LIMIT} minutes exceeded."
             )
-        await hell.edit("Downloading ...")
+        await hell.edit("🔍")
         file_path = await hellbot.app.download_media(message.reply_to_message)
         context = {
             "chat_id": message.chat.id,
@@ -80,7 +80,7 @@ async def play_music(_, message: Message, context: dict):
             return await hell.edit(
                 f"Audio duration limit of {Config.PLAY_LIMIT} minutes exceeded."
             )
-        await hell.edit("Downloading ...")
+        await hell.edit("🔍")
         file_path = await hellbot.app.download_media(message.reply_to_message)
         context = {
             "chat_id": message.chat.id,
@@ -111,7 +111,7 @@ async def play_music(_, message: Message, context: dict):
             await player.playlist(hell, context, song_list, video)
             return
         try:
-            await hell.edit("Searching ...")
+            await hell.edit("🔍")
             result = await ytube.get_data(url, False)
         except Exception as e:
             return await hell.edit(f"**Error:**\n`{e}`")
@@ -132,7 +132,7 @@ async def play_music(_, message: Message, context: dict):
     # if the user sent a query
     query = message.text.split(" ", 1)[1]
     try:
-        await hell.edit("Searching ...")
+        await hell.edit("🔍")
         result = await ytube.get_data(query, False)
     except Exception as e:
         return await hell.edit(f"**Error:**\n`{e}`")
