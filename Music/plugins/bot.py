@@ -15,10 +15,9 @@ from Music.helpers.strings import TEXTS
 from Music.helpers.users import MusicUser
 from Music.utils.youtube import ytube
 
-
-@hellbot.app.on_message(filters.command(["start", "alive"]) & ~Config.BANNED_USERS)
+@hellbot.app.on_message(~filters.command(["start", "alive", "help"]) & ~Config.BANNED_USERS)
 @check_mode
-async def start(_, message: Message):
+async def custom_command_handler(_, message: Message):
     if message.chat.type == ChatType.PRIVATE:
         if len(message.command) > 1:
             deep_cmd = message.text.split(None, 1)[1]
@@ -62,12 +61,6 @@ async def start(_, message: Message):
                     disable_web_page_preview=True,
                 )
                 return
-            elif deep_cmd.startswith("help"):
-                await message.reply_text(
-                    TEXTS.HELP_PM.format(hellbot.app.mention),
-                    reply_markup=InlineKeyboardMarkup(Buttons.help_pm_markup()),
-                )
-                return
         await message.reply_text(
             TEXTS.START_PM.format(
                 message.from_user.first_name,
@@ -94,36 +87,4 @@ async def help(_, message: Message):
             reply_markup=InlineKeyboardMarkup(
                 Buttons.help_gc_markup(hellbot.app.username)
             ),
-        )
-
-
-@hellbot.app.on_message(filters.command("ping") & ~Config.BANNED_USERS)
-async def ping(_, message: Message):
-    start_time = datetime.datetime.now()
-    hell = await message.reply_text("Pong!")
-    calls_ping = await hellmusic.ping()
-    stats = await formatter.system_stats()
-    end_time = (datetime.datetime.now() - start_time).microseconds / 1000
-    await hell.edit_text(
-        TEXTS.PING_REPLY.format(end_time, stats["uptime"], calls_ping),
-        disable_web_page_preview=True,
-        reply_markup=InlineKeyboardMarkup(Buttons.close_markup()),
-    )
-
-
-@hellbot.app.on_message(filters.command("sysinfo") & ~Config.BANNED_USERS)
-@check_mode
-@UserWrapper
-async def sysinfo(_, message: Message):
-    stats = await formatter.system_stats()
-    await message.reply_text(
-        TEXTS.SYSTEM.format(
-            stats["core"],
-            stats["cpu"],
-            stats["disk"],
-            stats["ram"],
-            stats["uptime"],
-            hellbot.app.mention,
-        ),
-        reply_markup=InlineKeyboardMarkup(Buttons.close_markup()),
-    )
+                )
